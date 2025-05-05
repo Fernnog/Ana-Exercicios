@@ -7,66 +7,74 @@ document.addEventListener('DOMContentLoaded', () => {
         let correctCount = 0;
         const totalExercises = exercises.length;
 
-        // Limpa resultados anteriores antes de verificar novamente
+        // Limpa resultados anteriores
         finalResultDiv.textContent = '';
-        finalResultDiv.className = ''; // Limpa classes de estilo anteriores do resultado final
-         exercises.forEach(exerciseDiv => {
+        finalResultDiv.style.backgroundColor = '#e6e6fa'; // Reseta cor de fundo
+        finalResultDiv.style.color = '#333'; // Reseta cor do texto
+        exercises.forEach(exerciseDiv => {
             exerciseDiv.classList.remove('correct', 'incorrect');
             const indicator = exerciseDiv.querySelector('.result-indicator');
             indicator.textContent = '';
-            indicator.className = 'result-indicator'; // Reseta classe do indicador
+            indicator.className = 'result-indicator';
         });
 
-        // Itera sobre cada exercício para verificar a resposta
+        // Itera sobre cada exercício para verificar a resposta selecionada
         exercises.forEach((exerciseDiv, index) => {
-            const input = exerciseDiv.querySelector('.answer-input');
             const correctAnswer = exerciseDiv.getAttribute('data-answer');
             const indicator = exerciseDiv.querySelector('.result-indicator');
+            const options = exerciseDiv.querySelectorAll('.options input[type="radio"]'); // Pega todos os radios da questão
 
-            // Limpa e padroniza a resposta do usuário (remove R$, espaços, usa vírgula)
-            let userAnswer = input.value.trim().replace('R$', '').replace(/\s/g, '');
-            userAnswer = userAnswer.replace('.', ',');
+            // Encontra a opção selecionada
+            let selectedOption = null;
+            options.forEach(radio => {
+                if (radio.checked) {
+                    selectedOption = radio;
+                }
+            });
 
-            // Verifica se a resposta está correta
-            if (userAnswer === correctAnswer) {
-                correctCount++;
-                exerciseDiv.classList.add('correct');
-                indicator.textContent = '✔️ Certo!';
-                indicator.classList.add('correct');
+            // Verifica se alguma opção foi selecionada e se está correta
+            if (selectedOption) {
+                const userAnswer = selectedOption.value;
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    exerciseDiv.classList.add('correct');
+                    indicator.textContent = '✔️ Certo!';
+                    indicator.classList.add('correct');
+                } else {
+                    exerciseDiv.classList.add('incorrect');
+                    const formattedCorrectAnswer = `R$ ${correctAnswer}`;
+                    indicator.textContent = `❌ Errado! Era ${formattedCorrectAnswer}`;
+                    indicator.classList.add('incorrect');
+                }
             } else {
-                exerciseDiv.classList.add('incorrect');
-                // Mostra a resposta correta se estiver errado
-                const formattedCorrectAnswer = `R$ ${correctAnswer}`;
-                indicator.textContent = `❌ Errado! Era ${formattedCorrectAnswer}`;
-                indicator.classList.add('incorrect');
+                // Nenhuma opção selecionada para esta questão
+                exerciseDiv.classList.add('incorrect'); // Marca como incorreto se não respondeu
+                indicator.textContent = ' Pulei...'; // Ou 'Sem resposta'
+                 indicator.classList.add('incorrect'); // Estilo de erro
             }
         });
 
-        // Exibe o resultado final
+        // Exibe o resultado final (lógica idêntica à anterior)
         let message = `Você acertou ${correctCount} de ${totalExercises} exercícios! `;
         if (correctCount === totalExercises) {
             message += '🎉 Parabéns, você acertou tudo!';
-            finalResultDiv.style.backgroundColor = '#d4edda'; // Fundo verde
-            finalResultDiv.style.color = '#155724'; // Texto verde escuro
-        } else if (correctCount >= totalExercises / 2) {
-            message += '👍 Muito bem, continue praticando!';
-             finalResultDiv.style.backgroundColor = '#fff3cd'; // Fundo amarelo
-             finalResultDiv.style.color = '#856404'; // Texto amarelo escuro
-        } else {
+            finalResultDiv.style.backgroundColor = '#d4edda'; // Verde
+            finalResultDiv.style.color = '#155724';
+        } else if (correctCount >= totalExercises * 0.7) { // Acertou 70% ou mais
+             message += '👍 Ótimo trabalho!';
+             finalResultDiv.style.backgroundColor = '#cfe2ff'; // Azul claro
+             finalResultDiv.style.color = '#0a58ca';
+        } else if (correctCount >= totalExercises / 2) { // Acertou metade ou mais
+            message += '😃 Bom esforço, continue praticando!';
+             finalResultDiv.style.backgroundColor = '#fff3cd'; // Amarelo
+             finalResultDiv.style.color = '#856404';
+        } else { // Acertou menos da metade
             message += '🤔 Continue tentando, você vai conseguir!';
-            finalResultDiv.style.backgroundColor = '#f8d7da'; // Fundo vermelho
-             finalResultDiv.style.color = '#721c24'; // Texto vermelho escuro
+            finalResultDiv.style.backgroundColor = '#f8d7da'; // Vermelho
+             finalResultDiv.style.color = '#721c24';
         }
         finalResultDiv.textContent = message;
     });
 
-     // Opcional: Permitir pressionar Enter no último campo para verificar
-     const lastInput = exercises[exercises.length - 1].querySelector('.answer-input');
-     if(lastInput) {
-        lastInput.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                checkAllButton.click(); // Simula o clique no botão
-            }
-        });
-     }
+    // Não precisa mais do listener de 'Enter' no input, pois não há mais inputs de texto.
 });

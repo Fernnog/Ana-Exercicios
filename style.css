@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f0f8ff; /* Alice Blue - suave */
+    background-color: #f0f8ff; /* Alice Blue */
     color: #333;
     line-height: 1.6;
     margin: 0;
@@ -19,18 +19,18 @@ body {
 }
 
 h1, h2 {
-    color: #ff6347; /* Tomato - chamativo */
+    color: #ff6347; /* Tomato */
     text-align: center;
     margin-bottom: 20px;
 }
 
 h2 {
-    color: #4682b4; /* Steel Blue - um pouco mais sério */
+    color: #4682b4; /* Steel Blue */
     margin-top: 30px;
 }
 
-/* Estilos das Moedas */
-.coin-display {
+/* --- Estilos das Moedas --- */
+.coin-display { /* Seção "Conheça as Moedas" */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -40,11 +40,11 @@ h2 {
     border-radius: 8px;
 }
 
-.coin {
-    width: 80px;
-    height: 80px;
+.coin { /* Moedas grandes (para exibição e exercícios) */
+    width: 70px; /* Um pouco menor para caber melhor nos exercícios */
+    height: 70px;
     border-radius: 50%;
-    display: flex;
+    display: inline-flex; /* Mudei para inline-flex para exercícios */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -52,14 +52,16 @@ h2 {
     color: #fff;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     border: 2px solid rgba(0,0,0,0.3);
+    margin: 5px; /* Espaçamento entre moedas nos exercícios */
+    vertical-align: middle; /* Alinha com o texto ao lado se necessário */
 }
 
 .coin span {
-    font-size: 1.8em;
+    font-size: 1.6em;
 }
 
 .coin small {
-    font-size: 0.7em;
+    font-size: 0.6em;
     margin-top: -5px;
 }
 
@@ -67,18 +69,33 @@ h2 {
 .coin-50 { background-color: #c0c0c0; } /* Silver */
 .coin-1  { background-color: #ffd700; color: #444; } /* Gold */
 
-/* Moedas menores para texto e questões */
-.coin-inline {
+/* Moedas pequenas para a lista de equivalências */
+.coin-small {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 2px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #fff;
+    font-size: 0.7em;
     border: 1px solid rgba(0,0,0,0.3);
     box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    margin: 0 2px;
+    vertical-align: middle;
+}
+.coin-small span { font-size: 1.1em; } /* Ajuste do tamanho do número dentro */
+
+/* Container para as moedas pequenas na lista */
+.coin-inline-display {
+    display: inline-block;
+    min-width: 30px; /* Garante alinhamento mínimo */
+    text-align: center;
 }
 
+
+/* --- Seção de Informações --- */
 .coin-info ul {
     list-style: none;
     padding: 0;
@@ -92,9 +109,14 @@ h2 {
     display: flex;
     align-items: center;
     font-weight: 600;
+    flex-wrap: wrap; /* Permite quebrar linha se necessário */
+}
+.coin-info li > * { /* Espaçamento entre elementos na lista */
+    margin-right: 5px;
 }
 
-/* Estilos dos Exercícios */
+
+/* --- Estilos dos Exercícios --- */
 .exercises {
     margin-top: 40px;
     border-top: 2px dashed #4682b4;
@@ -102,22 +124,35 @@ h2 {
 }
 
 .exercise {
-    background-color: #fffacd; /* Lemon Chiffon - claro e alegre */
+    background-color: #fffacd; /* Lemon Chiffon */
     border: 1px solid #eee;
+    border-left: 5px solid transparent; /* Borda inicial transparente */
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: border-left-color 0.3s ease; /* Animação da borda */
 }
 
-.exercise p:first-child { /* O parágrafo da pergunta */
+.exercise p:first-child { /* Parágrafo da pergunta */
     font-weight: 600;
     color: #333;
     margin-bottom: 10px;
+    display: flex; /* Para alinhar o indicador */
+    justify-content: space-between; /* Coloca o indicador na direita */
+    align-items: center;
 }
 
 .question-coins {
     margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Fundo levemente branco */
+    border-radius: 5px;
+    min-height: 80px; /* Garante espaço para as moedas */
+    display: flex; /* Usa flexbox para alinhar moedas */
+    flex-wrap: wrap; /* Permite quebra de linha das moedas */
+    gap: 10px; /* Espaço entre as moedas */
+    align-items: center;
 }
 
 .exercise label {
@@ -132,33 +167,70 @@ h2 {
     margin-right: 10px;
     width: 80px;
     text-align: right;
+    font-size: 1em;
+}
+.answer-input:focus {
+    outline: 2px solid #4682b4;
 }
 
-.check-btn {
-    padding: 8px 15px;
+/* Indicador de Resultado (check/cross) */
+.result-indicator {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: 15px; /* Espaço antes do indicador */
+}
+.result-indicator.correct {
+    color: #28a745; /* Verde */
+}
+.result-indicator.incorrect {
+    color: #dc3545; /* Vermelho */
+    font-size: 0.9em; /* Diminui um pouco para caber texto */
+    font-weight: normal;
+}
+
+/* Estilo para exercício correto/incorreto */
+.exercise.correct {
+    border-left-color: #28a745; /* Borda verde */
+    background-color: #e9f7ec; /* Fundo verde claro */
+}
+.exercise.incorrect {
+    border-left-color: #dc3545; /* Borda vermelha */
+     background-color: #fbe SDEE; /* Fundo vermelho claro */
+}
+
+
+/* --- Seção de Verificação Final --- */
+.final-check {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#check-all-btn {
+    padding: 12px 25px;
     background-color: #ff6347; /* Tomato */
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 1.1em;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-.check-btn:hover {
+#check-all-btn:hover {
     background-color: #e5533d;
 }
-
-.feedback {
-    margin-top: 10px;
-    font-weight: 600;
-    min-height: 20px; /* Para evitar que o layout salte */
+#check-all-btn:active {
+    transform: scale(0.98); /* Efeito de clique */
 }
 
-.feedback.correct {
-    color: #28a745; /* Verde */
-}
-
-.feedback.incorrect {
-    color: #dc3545; /* Vermelho */
+#final-result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e6e6fa; /* Lavender */
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+    min-height: 30px; /* Evita "saltos" no layout */
 }

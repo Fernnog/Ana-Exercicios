@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando com Moedinhas!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Vamos Aprender Sobre Moedas! 💰</h1>
+
+        <div class="coin-info">
+            <h2>Conheça as Moedas:</h2>
+            <div class="coin-display">
+                <div class="coin coin-25"><span>25</span><small>centavos</small></div>
+                <div class="coin coin-50"><span>50</span><small>centavos</small></div>
+                <div class="coin coin-1"><span>1</span><small>real</small></div>
+            </div>
+            <h2>Lembre-se:</h2>
+            <ul>
+                <li><div class="coin-inline coin-25"></div> <div class="coin-inline coin-25"></div> <div class="coin-inline coin-25"></div> <div class="coin-inline coin-25"></div> = <div class="coin-inline coin-1"></div> (Quatro moedas de 25 centavos valem 1 real)</li>
+                <li><div class="coin-inline coin-50"></div> <div class="coin-inline coin-50"></div> = <div class="coin-inline coin-1"></div> (Duas moedas de 50 centavos valem 1 real)</li>
+                <li><div class="coin-inline coin-25"></div> <div class="coin-inline coin-25"></div> = <div class="coin-inline coin-50"></div> (Duas moedas de 25 centavos valem 50 centavos)</li>
+            </ul>
+        </div>
+
+        <div class="exercises">
+            <h2>Hora de Praticar!</h2>
+            <p>Digite o valor total em reais (use vírgula, por exemplo: <strong>1,50</strong> ou <strong>0,75</strong>).</p>
+
+            <!-- Exercício 1 -->
+            <div class="exercise" data-answer="0,50">
+                <p><strong>1.</strong> Quanto valem juntas?</p>
+                <div class="question-coins">
+                    <div class="coin-inline coin-25"></div>
+                    <div class="coin-inline coin-25"></div>
+                </div>
+                <label>Total: R$ </label>
+                <input type="text" class="answer-input" placeholder="ex: 0,50">
+                <button class="check-btn">Verificar</button>
+                <p class="feedback"></p>
+            </div>
+
+            <!-- Exercício 2 -->
+            <div class="exercise" data-answer="1,50">
+                <p><strong>2.</strong> Quanto valem juntas?</p>
+                <div class="question-coins">
+                    <div class="coin-inline coin-50"></div>
+                    <div class="coin-inline coin-50"></div>
+                    <div class="coin-inline coin-50"></div>
+                </div>
+                <label>Total: R$ </label>
+                <input type="text" class="answer-input" placeholder="ex: 1,50">
+                <button class="check-btn">Verificar</button>
+                <p class="feedback"></p>
+            </div>
+
+            <!-- Exercício 3 -->
+            <div class="exercise" data-answer="1,25">
+                <p><strong>3.</strong> Quanto valem juntas?</p>
+                <div class="question-coins">
+                    <div class="coin-inline coin-1"></div>
+                    <div class="coin-inline coin-25"></div>
+                </div>
+                <label>Total: R$ </label>
+                <input type="text" class="answer-input" placeholder="ex: 1,25">
+                <button class="check-btn">Verificar</button>
+                <p class="feedback"></p>
+            </div>
+
+            <!-- Exercício 4 -->
+            <div class="exercise" data-answer="1,00">
+                 <p><strong>4.</strong> Quanto valem juntas?</p>
+                 <div class="question-coins">
+                     <div class="coin-inline coin-25"></div>
+                     <div class="coin-inline coin-25"></div>
+                     <div class="coin-inline coin-25"></div>
+                     <div class="coin-inline coin-25"></div>
+                 </div>
+                 <label>Total: R$ </label>
+                 <input type="text" class="answer-input" placeholder="ex: 1,00">
+                 <button class="check-btn">Verificar</button>
+                 <p class="feedback"></p>
+            </div>
+
+             <!-- Exercício 5 -->
+             <div class="exercise" data-answer="1,00">
+                <p><strong>5.</strong> Quanto valem juntas?</p>
+                <div class="question-coins">
+                    <div class="coin-inline coin-50"></div>
+                    <div class="coin-inline coin-50"></div>
+                </div>
+                <label>Total: R$ </label>
+                <input type="text" class="answer-input" placeholder="ex: 1,00">
+                <button class="check-btn">Verificar</button>
+                <p class="feedback"></p>
+            </div>
+
+             <!-- Exercício 6 -->
+            <div class="exercise" data-answer="2,75">
+                <p><strong>6.</strong> Quanto valem juntas?</p>
+                <div class="question-coins">
+                    <div class="coin-inline coin-1"></div>
+                    <div class="coin-inline coin-1"></div>
+                    <div class="coin-inline coin-50"></div>
+                    <div class="coin-inline coin-25"></div>
+                </div>
+                <label>Total: R$ </label>
+                <input type="text" class="answer-input" placeholder="ex: 2,75">
+                <button class="check-btn">Verificar</button>
+                <p class="feedback"></p>
+            </div>
+
+             <!-- Exercício 7 -->
+             <div class="exercise" data-answer="1,25">
+                <p><strong>7.</strong> Quanto valem juntas?</p>
+                <div class="question-coins">
+                    <div class="coin-inline coin-50"></div>
+                    <div class="coin-inline coin-25"></div>
+                    <div class="coin-inline coin-25"></div>
+                    <div class="coin-inline coin-25"></div>
+                 </div>
+                <label>Total: R$ </label>
+                <input type="text" class="answer-input" placeholder="ex: 1,25">
+                <button class="check-btn">Verificar</button>
+                <p class="feedback"></p>
+            </div>
+
+            <!-- Exercício 8 -->
+            <div class="exercise" data-answer="3,00">
+                <p><strong>8.</strong> Quanto valem juntas?</p>
+                <div class="question-coins">
+                    <div class="coin-inline coin-1"></div>
+                    <div class="coin-inline coin-1"></div>
+                    <div class="coin-inline coin-50"></div>
+                    <div class="coin-inline coin-50"></div>
+                 </div>
+                <label>Total: R$ </label>
+                <input type="text" class="answer-input" placeholder="ex: 3,00">
+                <button class="check-btn">Verificar</button>
+                <p class="feedback"></p>
+            </div>
+
+             <!-- Exercício 9 -->
+             <div class="exercise" data-answer="2,00">
+                 <p><strong>9.</strong> Quanto valem juntas?</p>
+                 <div class="question-coins">
+                    <div class="coin-inline coin-50"></div>
+                    <div class="coin-inline coin-50"></div>
+                    <div class="coin-inline coin-25"></div>
+                    <div class="coin-inline coin-25"></div>
+                    <div class="coin-inline coin-25"></div>
+                    <div class="coin-inline coin-25"></div>
+                </div>
+                <label>Total: R$ </label>
+                <input type="text" class="answer-input" placeholder="ex: 2,00">
+                <button class="check-btn">Verificar</button>
+                <p class="feedback"></p>
+            </div>
+
+             <!-- Exercício 10 -->
+             <div class="exercise" data-answer="3,50">
+                 <p><strong>10.</strong> Quanto valem juntas?</p>
+                 <div class="question-coins">
+                    <div class="coin-inline coin-1"></div>
+                     <div class="coin-inline coin-1"></div>
+                    <div class="coin-inline coin-50"></div>
+                    <div class="coin-inline coin-50"></div>
+                    <div class="coin-inline coin-50"></div>
+                 </div>
+                 <label>Total: R$ </label>
+                 <input type="text" class="answer-input" placeholder="ex: 3,50">
+                 <button class="check-btn">Verificar</button>
+                 <p class="feedback"></p>
+             </div>
+
+        </div> <!-- Fim exercises -->
+
+    </div> <!-- Fim container -->
+
+    <script src="script.js"></script>
+</body>
+</html>

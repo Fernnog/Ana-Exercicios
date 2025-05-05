@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+/* Estilos gerais (body, container, h1, h2) - sem alterações */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f0f8ff; /* Alice Blue */
@@ -29,7 +30,7 @@ h2 {
     margin-top: 30px;
 }
 
-/* --- Estilos das Moedas --- */
+/* --- Estilos das Moedas --- (sem alterações) */
 .coin-display { /* Seção "Conheça as Moedas" */
     display: flex;
     justify-content: space-around;
@@ -39,12 +40,11 @@ h2 {
     background-color: #e6e6fa; /* Lavender */
     border-radius: 8px;
 }
-
-.coin { /* Moedas grandes (para exibição e exercícios) */
-    width: 70px; /* Um pouco menor para caber melhor nos exercícios */
+.coin { /* Moedas grandes */
+    width: 70px;
     height: 70px;
     border-radius: 50%;
-    display: inline-flex; /* Mudei para inline-flex para exercícios */
+    display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -52,68 +52,33 @@ h2 {
     color: #fff;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     border: 2px solid rgba(0,0,0,0.3);
-    margin: 5px; /* Espaçamento entre moedas nos exercícios */
-    vertical-align: middle; /* Alinha com o texto ao lado se necessário */
+    margin: 5px;
+    vertical-align: middle;
 }
-
-.coin span {
-    font-size: 1.6em;
-}
-
-.coin small {
-    font-size: 0.6em;
-    margin-top: -5px;
-}
-
+.coin span { font-size: 1.6em; }
+.coin small { font-size: 0.6em; margin-top: -5px; }
 .coin-25 { background-color: #cd7f32; } /* Bronze */
 .coin-50 { background-color: #c0c0c0; } /* Silver */
 .coin-1  { background-color: #ffd700; color: #444; } /* Gold */
 
-/* Moedas pequenas para a lista de equivalências */
-.coin-small {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: #fff;
-    font-size: 0.7em;
-    border: 1px solid rgba(0,0,0,0.3);
-    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    margin: 0 2px;
-    vertical-align: middle;
+.coin-small { /* Moedas pequenas */
+    width: 25px; height: 25px; border-radius: 50%; display: inline-flex;
+    justify-content: center; align-items: center; font-weight: bold;
+    color: #fff; font-size: 0.7em; border: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1); margin: 0 2px; vertical-align: middle;
 }
-.coin-small span { font-size: 1.1em; } /* Ajuste do tamanho do número dentro */
-
-/* Container para as moedas pequenas na lista */
-.coin-inline-display {
-    display: inline-block;
-    min-width: 30px; /* Garante alinhamento mínimo */
-    text-align: center;
-}
+.coin-small span { font-size: 1.1em; }
+.coin-inline-display { display: inline-block; min-width: 30px; text-align: center; }
 
 
-/* --- Seção de Informações --- */
-.coin-info ul {
-    list-style: none;
-    padding: 0;
-}
-
+/* --- Seção de Informações --- (sem alterações) */
+.coin-info ul { list-style: none; padding: 0; }
 .coin-info li {
-    background-color: #f8f8ff; /* Ghost White */
-    padding: 10px;
-    margin-bottom: 8px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    flex-wrap: wrap; /* Permite quebrar linha se necessário */
+    background-color: #f8f8ff; padding: 10px; margin-bottom: 8px;
+    border-radius: 5px; display: flex; align-items: center;
+    font-weight: 600; flex-wrap: wrap;
 }
-.coin-info li > * { /* Espaçamento entre elementos na lista */
-    margin-right: 5px;
-}
+.coin-info li > * { margin-right: 5px; }
 
 
 /* --- Estilos dos Exercícios --- */
@@ -126,111 +91,97 @@ h2 {
 .exercise {
     background-color: #fffacd; /* Lemon Chiffon */
     border: 1px solid #eee;
-    border-left: 5px solid transparent; /* Borda inicial transparente */
+    border-left: 5px solid transparent;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: border-left-color 0.3s ease; /* Animação da borda */
+    transition: border-left-color 0.3s ease;
 }
 
 .exercise p:first-child { /* Parágrafo da pergunta */
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 10px;
-    display: flex; /* Para alinhar o indicador */
-    justify-content: space-between; /* Coloca o indicador na direita */
+    font-weight: 600; color: #333; margin-bottom: 10px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.question-coins { /* Container das moedas na questão */
+    margin-bottom: 15px; padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5); border-radius: 5px;
+    min-height: 80px; display: flex; flex-wrap: wrap;
+    gap: 10px; align-items: center;
+}
+
+/* --- Estilos das Opções (Múltipla Escolha) --- */
+.options {
+    margin-top: 15px;
+    display: flex; /* Coloca opções lado a lado */
+    flex-wrap: wrap; /* Permite quebrar linha se não couber */
+    gap: 15px; /* Espaço entre as opções */
+}
+
+.option {
+    display: flex; /* Alinha radio button e label */
     align-items: center;
-}
-
-.question-coins {
-    margin-bottom: 15px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.5); /* Fundo levemente branco */
-    border-radius: 5px;
-    min-height: 80px; /* Garante espaço para as moedas */
-    display: flex; /* Usa flexbox para alinhar moedas */
-    flex-wrap: wrap; /* Permite quebra de linha das moedas */
-    gap: 10px; /* Espaço entre as moedas */
-    align-items: center;
-}
-
-.exercise label {
-    font-weight: 600;
-    margin-right: 5px;
-}
-
-.answer-input {
+    background-color: #f8f9fa; /* Fundo levemente cinza */
     padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
-    width: 80px;
-    text-align: right;
-    font-size: 1em;
-}
-.answer-input:focus {
-    outline: 2px solid #4682b4;
-}
-
-/* Indicador de Resultado (check/cross) */
-.result-indicator {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-left: 15px; /* Espaço antes do indicador */
-}
-.result-indicator.correct {
-    color: #28a745; /* Verde */
-}
-.result-indicator.incorrect {
-    color: #dc3545; /* Vermelho */
-    font-size: 0.9em; /* Diminui um pouco para caber texto */
-    font-weight: normal;
-}
-
-/* Estilo para exercício correto/incorreto */
-.exercise.correct {
-    border-left-color: #28a745; /* Borda verde */
-    background-color: #e9f7ec; /* Fundo verde claro */
-}
-.exercise.incorrect {
-    border-left-color: #dc3545; /* Borda vermelha */
-     background-color: #fbe SDEE; /* Fundo vermelho claro */
-}
-
-
-/* --- Seção de Verificação Final --- */
-.final-check {
-    text-align: center;
-    margin-top: 30px;
-}
-
-#check-all-btn {
-    padding: 12px 25px;
-    background-color: #ff6347; /* Tomato */
-    color: white;
-    border: none;
-    border-radius: 5px;
+    border-radius: 20px; /* Bordas arredondadas */
+    border: 1px solid #dee2e6;
     cursor: pointer;
-    font-size: 1.1em;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.1s ease;
+    transition: background-color 0.2s ease;
+}
+.option:hover {
+    background-color: #e9ecef;
 }
 
-#check-all-btn:hover {
-    background-color: #e5533d;
+.option input[type="radio"] {
+    margin-right: 8px; /* Espaço entre o botão e o texto */
+    cursor: pointer;
+    /* Opcional: aumentar o tamanho do radio button */
+    transform: scale(1.2);
 }
-#check-all-btn:active {
-    transform: scale(0.98); /* Efeito de clique */
+
+.option label {
+    font-weight: 500;
+    cursor: pointer;
+    color: #495057;
 }
+
+/* Estilo quando uma opção está selecionada (sutil) */
+.option input[type="radio"]:checked + label {
+   color: #007bff; /* Cor azul para o texto selecionado */
+   font-weight: 600;
+}
+/* Você pode adicionar mais estilo para o .option quando o radio está checked se quiser */
+/* .option:has(input[type="radio"]:checked) {
+    background-color: #cfe2ff;
+    border-color: #9ec5fe;
+} */
+
+
+/* --- Indicador de Resultado (check/cross) --- (sem alterações) */
+.result-indicator {
+    font-size: 1.2em; font-weight: bold; margin-left: 15px;
+}
+.result-indicator.correct { color: #28a745; } /* Verde */
+.result-indicator.incorrect { color: #dc3545; font-size: 0.9em; font-weight: normal;} /* Vermelho */
+
+/* Estilo para exercício correto/incorreto (sem alterações) */
+.exercise.correct { border-left-color: #28a745; background-color: #e9f7ec; }
+.exercise.incorrect { border-left-color: #dc3545; background-color: #f8d7da; }
+
+
+/* --- Seção de Verificação Final --- (sem alterações) */
+.final-check { text-align: center; margin-top: 30px; }
+#check-all-btn {
+    padding: 12px 25px; background-color: #ff6347; color: white;
+    border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em;
+    font-weight: 600; transition: background-color 0.3s ease, transform 0.1s ease;
+}
+#check-all-btn:hover { background-color: #e5533d; }
+#check-all-btn:active { transform: scale(0.98); }
 
 #final-result {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #e6e6fa; /* Lavender */
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 1.2em;
-    color: #333;
-    min-height: 30px; /* Evita "saltos" no layout */
+    margin-top: 20px; padding: 15px; background-color: #e6e6fa;
+    border-radius: 8px; font-weight: bold; font-size: 1.2em;
+    color: #333; min-height: 30px;
 }

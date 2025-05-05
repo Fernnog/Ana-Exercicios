@@ -10,7 +10,8 @@
     <div class="container">
         <h1>Vamos Aprender Sobre Moedas! 💰</h1>
 
-        <div class="coin-info">
+        <!-- Seção Conheça as Moedas e Lembre-se (sem alterações) -->
+         <div class="coin-info">
             <h2>Conheça as Moedas:</h2>
             <div class="coin-display">
                 <div class="coin coin-25"><span>25</span><small>centavos</small></div>
@@ -56,7 +57,7 @@
 
         <div class="exercises">
             <h2>Hora de Praticar!</h2>
-            <p>Digite o valor total em reais (use vírgula, por exemplo: <strong>1,50</strong> ou <strong>0,75</strong>).</p>
+            <p>Clique na bolinha ao lado do valor que você acha correto.</p>
 
             <!-- Exercício 1 -->
             <div class="exercise" data-answer="0,50">
@@ -65,8 +66,20 @@
                     <div class="coin coin-25"><span>25</span><small>centavos</small></div>
                     <div class="coin coin-25"><span>25</span><small>centavos</small></div>
                 </div>
-                <label>Total: R$ </label>
-                <input type="text" class="answer-input" placeholder="ex: 0,50">
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q1_opt1" name="q1" value="0,25">
+                        <label for="q1_opt1">R$ 0,25</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q1_opt2" name="q1" value="0,50">
+                        <label for="q1_opt2">R$ 0,50</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q1_opt3" name="q1" value="0,75">
+                        <label for="q1_opt3">R$ 0,75</label>
+                    </div>
+                </div>
             </div>
 
             <!-- Exercício 2 -->
@@ -77,8 +90,24 @@
                      <div class="coin coin-50"><span>50</span><small>centavos</small></div>
                      <div class="coin coin-50"><span>50</span><small>centavos</small></div>
                 </div>
-                <label>Total: R$ </label>
-                <input type="text" class="answer-input" placeholder="ex: 1,50">
+                 <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q2_opt1" name="q2" value="1,00">
+                        <label for="q2_opt1">R$ 1,00</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q2_opt2" name="q2" value="1,25">
+                        <label for="q2_opt2">R$ 1,25</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q2_opt3" name="q2" value="1,50">
+                        <label for="q2_opt3">R$ 1,50</label>
+                    </div>
+                     <div class="option">
+                        <input type="radio" id="q2_opt4" name="q2" value="0,75">
+                        <label for="q2_opt4">R$ 0,75</label>
+                    </div>
+                </div>
             </div>
 
             <!-- Exercício 3 -->
@@ -88,8 +117,24 @@
                      <div class="coin coin-1"><span>1</span><small>real</small></div>
                      <div class="coin coin-25"><span>25</span><small>centavos</small></div>
                  </div>
-                 <label>Total: R$ </label>
-                 <input type="text" class="answer-input" placeholder="ex: 1,25">
+                 <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q3_opt1" name="q3" value="1,00">
+                        <label for="q3_opt1">R$ 1,00</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q3_opt2" name="q3" value="1,25">
+                        <label for="q3_opt2">R$ 1,25</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q3_opt3" name="q3" value="1,50">
+                        <label for="q3_opt3">R$ 1,50</label>
+                    </div>
+                     <div class="option">
+                        <input type="radio" id="q3_opt4" name="q3" value="0,25">
+                        <label for="q3_opt4">R$ 0,25</label>
+                    </div>
+                </div>
             </div>
 
              <!-- Exercício 4 -->
@@ -101,8 +146,24 @@
                      <div class="coin coin-25"><span>25</span><small>centavos</small></div>
                      <div class="coin coin-25"><span>25</span><small>centavos</small></div>
                  </div>
-                 <label>Total: R$ </label>
-                 <input type="text" class="answer-input" placeholder="ex: 1,00">
+                 <div class="options">
+                     <div class="option">
+                         <input type="radio" id="q4_opt1" name="q4" value="0,50">
+                         <label for="q4_opt1">R$ 0,50</label>
+                     </div>
+                     <div class="option">
+                         <input type="radio" id="q4_opt2" name="q4" value="0,75">
+                         <label for="q4_opt2">R$ 0,75</label>
+                     </div>
+                     <div class="option">
+                         <input type="radio" id="q4_opt3" name="q4" value="1,00">
+                         <label for="q4_opt3">R$ 1,00</label>
+                     </div>
+                     <div class="option">
+                         <input type="radio" id="q4_opt4" name="q4" value="1,25">
+                         <label for="q4_opt4">R$ 1,25</label>
+                     </div>
+                 </div>
             </div>
 
             <!-- Exercício 5 -->
@@ -112,8 +173,20 @@
                     <div class="coin coin-50"><span>50</span><small>centavos</small></div>
                     <div class="coin coin-50"><span>50</span><small>centavos</small></div>
                 </div>
-                <label>Total: R$ </label>
-                <input type="text" class="answer-input" placeholder="ex: 1,00">
+                 <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q5_opt1" name="q5" value="0,50">
+                        <label for="q5_opt1">R$ 0,50</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q5_opt2" name="q5" value="1,00">
+                        <label for="q5_opt2">R$ 1,00</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q5_opt3" name="q5" value="1,50">
+                        <label for="q5_opt3">R$ 1,50</label>
+                    </div>
+                </div>
             </div>
 
              <!-- Exercício 6 -->
@@ -125,8 +198,24 @@
                     <div class="coin coin-50"><span>50</span><small>centavos</small></div>
                     <div class="coin coin-25"><span>25</span><small>centavos</small></div>
                 </div>
-                <label>Total: R$ </label>
-                <input type="text" class="answer-input" placeholder="ex: 2,75">
+                 <div class="options">
+                     <div class="option">
+                        <input type="radio" id="q6_opt1" name="q6" value="2,25">
+                        <label for="q6_opt1">R$ 2,25</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q6_opt2" name="q6" value="2,50">
+                        <label for="q6_opt2">R$ 2,50</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q6_opt3" name="q6" value="2,75">
+                        <label for="q6_opt3">R$ 2,75</label>
+                    </div>
+                     <div class="option">
+                        <input type="radio" id="q6_opt4" name="q6" value="3,00">
+                        <label for="q6_opt4">R$ 3,00</label>
+                    </div>
+                </div>
             </div>
 
              <!-- Exercício 7 -->
@@ -138,8 +227,24 @@
                     <div class="coin coin-25"><span>25</span><small>centavos</small></div>
                     <div class="coin coin-25"><span>25</span><small>centavos</small></div>
                  </div>
-                <label>Total: R$ </label>
-                <input type="text" class="answer-input" placeholder="ex: 1,25">
+                 <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q7_opt1" name="q7" value="1,00">
+                        <label for="q7_opt1">R$ 1,00</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q7_opt2" name="q7" value="1,25">
+                        <label for="q7_opt2">R$ 1,25</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q7_opt3" name="q7" value="1,50">
+                        <label for="q7_opt3">R$ 1,50</label>
+                    </div>
+                     <div class="option">
+                        <input type="radio" id="q7_opt4" name="q7" value="0,75">
+                        <label for="q7_opt4">R$ 0,75</label>
+                    </div>
+                 </div>
             </div>
 
             <!-- Exercício 8 -->
@@ -151,8 +256,24 @@
                     <div class="coin coin-50"><span>50</span><small>centavos</small></div>
                     <div class="coin coin-50"><span>50</span><small>centavos</small></div>
                  </div>
-                <label>Total: R$ </label>
-                <input type="text" class="answer-input" placeholder="ex: 3,00">
+                 <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q8_opt1" name="q8" value="2,00">
+                        <label for="q8_opt1">R$ 2,00</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q8_opt2" name="q8" value="2,50">
+                        <label for="q8_opt2">R$ 2,50</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q8_opt3" name="q8" value="3,00">
+                        <label for="q8_opt3">R$ 3,00</label>
+                    </div>
+                     <div class="option">
+                        <input type="radio" id="q8_opt4" name="q8" value="3,50">
+                        <label for="q8_opt4">R$ 3,50</label>
+                    </div>
+                 </div>
             </div>
 
              <!-- Exercício 9 -->
@@ -166,8 +287,24 @@
                     <div class="coin coin-25"><span>25</span><small>centavos</small></div>
                     <div class="coin coin-25"><span>25</span><small>centavos</small></div>
                 </div>
-                <label>Total: R$ </label>
-                <input type="text" class="answer-input" placeholder="ex: 2,00">
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q9_opt1" name="q9" value="1,50">
+                        <label for="q9_opt1">R$ 1,50</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q9_opt2" name="q9" value="1,75">
+                        <label for="q9_opt2">R$ 1,75</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q9_opt3" name="q9" value="2,00">
+                        <label for="q9_opt3">R$ 2,00</label>
+                    </div>
+                     <div class="option">
+                        <input type="radio" id="q9_opt4" name="q9" value="2,25">
+                        <label for="q9_opt4">R$ 2,25</label>
+                    </div>
+                 </div>
             </div>
 
              <!-- Exercício 10 -->
@@ -180,8 +317,24 @@
                     <div class="coin coin-50"><span>50</span><small>centavos</small></div>
                     <div class="coin coin-50"><span>50</span><small>centavos</small></div>
                  </div>
-                 <label>Total: R$ </label>
-                 <input type="text" class="answer-input" placeholder="ex: 3,50">
+                 <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q10_opt1" name="q10" value="2,50">
+                        <label for="q10_opt1">R$ 2,50</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q10_opt2" name="q10" value="3,00">
+                        <label for="q10_opt2">R$ 3,00</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q10_opt3" name="q10" value="3,50">
+                        <label for="q10_opt3">R$ 3,50</label>
+                    </div>
+                     <div class="option">
+                        <input type="radio" id="q10_opt4" name="q10" value="4,00">
+                        <label for="q10_opt4">R$ 4,00</label>
+                    </div>
+                 </div>
              </div>
 
             <!-- Botão de Verificação Geral -->

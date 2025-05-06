@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     checkAllButton.addEventListener('click', () => {
         let correctCount = 0;
-        const totalExercises = exercises.length;
+        const totalExercises = exercises.length; // Isso já se ajusta automaticamente para 20
 
         // Limpa resultados anteriores
         finalResultDiv.textContent = '';
@@ -22,9 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         exercises.forEach((exerciseDiv, index) => {
             const correctAnswer = exerciseDiv.getAttribute('data-answer');
             const indicator = exerciseDiv.querySelector('.result-indicator');
-            const options = exerciseDiv.querySelectorAll('.options input[type="radio"]'); // Pega todos os radios da questão
+            const options = exerciseDiv.querySelectorAll('.options input[type="radio"]'); 
 
-            // Encontra a opção selecionada
             let selectedOption = null;
             options.forEach(radio => {
                 if (radio.checked) {
@@ -32,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Verifica se alguma opção foi selecionada e se está correta
             if (selectedOption) {
                 const userAnswer = selectedOption.value;
                 if (userAnswer === correctAnswer) {
@@ -47,34 +45,35 @@ document.addEventListener('DOMContentLoaded', () => {
                     indicator.classList.add('incorrect');
                 }
             } else {
-                // Nenhuma opção selecionada para esta questão
-                exerciseDiv.classList.add('incorrect'); // Marca como incorreto se não respondeu
-                indicator.textContent = ' Pulei...'; // Ou 'Sem resposta'
-                 indicator.classList.add('incorrect'); // Estilo de erro
+                exerciseDiv.classList.add('incorrect'); 
+                indicator.textContent = ' Pulei...'; 
+                indicator.classList.add('incorrect'); 
             }
         });
 
-        // Exibe o resultado final (lógica idêntica à anterior)
+        // Exibe o resultado final
         let message = `Você acertou ${correctCount} de ${totalExercises} exercícios! `;
         if (correctCount === totalExercises) {
             message += '🎉 Parabéns, você acertou tudo!';
             finalResultDiv.style.backgroundColor = '#d4edda'; // Verde
             finalResultDiv.style.color = '#155724';
-        } else if (correctCount >= totalExercises * 0.7) { // Acertou 70% ou mais
-             message += '👍 Ótimo trabalho!';
+        } else if (correctCount >= totalExercises * 0.8) { // Acertou 80% ou mais (16/20)
+             message += '🏆 Excelente! Quase perfeito!';
+             finalResultDiv.style.backgroundColor = '#d1ecf1'; // Azul bem claro
+             finalResultDiv.style.color = '#0c5460';
+        } else if (correctCount >= totalExercises * 0.6) { // Acertou 60% ou mais (12/20)
+            message += '👍 Muito bem! Continue praticando!';
              finalResultDiv.style.backgroundColor = '#cfe2ff'; // Azul claro
              finalResultDiv.style.color = '#0a58ca';
-        } else if (correctCount >= totalExercises / 2) { // Acertou metade ou mais
-            message += '😃 Bom esforço, continue praticando!';
+        } else if (correctCount >= totalExercises * 0.4) { // Acertou 40% ou mais (8/20)
+            message += '😃 Bom esforço! Não desista!';
              finalResultDiv.style.backgroundColor = '#fff3cd'; // Amarelo
              finalResultDiv.style.color = '#856404';
-        } else { // Acertou menos da metade
-            message += '🤔 Continue tentando, você vai conseguir!';
+        } else { // Acertou menos de 40%
+            message += '🤔 Continue tentando, a prática leva à perfeição!';
             finalResultDiv.style.backgroundColor = '#f8d7da'; // Vermelho
              finalResultDiv.style.color = '#721c24';
         }
         finalResultDiv.textContent = message;
     });
-
-    // Não precisa mais do listener de 'Enter' no input, pois não há mais inputs de texto.
 });

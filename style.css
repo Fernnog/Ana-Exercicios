@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-/* Estilos gerais (body, container, h1, h2) - sem alterações */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f0f8ff; /* Alice Blue */
@@ -30,7 +29,7 @@ h2 {
     margin-top: 30px;
 }
 
-/* --- Estilos das Moedas --- (sem alterações) */
+/* --- Estilos das Moedas --- */
 .coin-display { /* Seção "Conheça as Moedas" */
     display: flex;
     justify-content: space-around;
@@ -41,8 +40,8 @@ h2 {
     border-radius: 8px;
 }
 .coin { /* Moedas grandes */
-    width: 70px;
-    height: 70px;
+    width: 60px; /* Reduzi um pouco para caber mais moedas nas questões */
+    height: 60px;
     border-radius: 50%;
     display: inline-flex;
     flex-direction: column;
@@ -52,11 +51,11 @@ h2 {
     color: #fff;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     border: 2px solid rgba(0,0,0,0.3);
-    margin: 5px;
+    margin: 3px; /* Espaçamento menor */
     vertical-align: middle;
 }
-.coin span { font-size: 1.6em; }
-.coin small { font-size: 0.6em; margin-top: -5px; }
+.coin span { font-size: 1.4em; } /* Ajuste para novo tamanho */
+.coin small { font-size: 0.55em; margin-top: -4px; } /* Ajuste para novo tamanho */
 .coin-25 { background-color: #cd7f32; } /* Bronze */
 .coin-50 { background-color: #c0c0c0; } /* Silver */
 .coin-1  { background-color: #ffd700; color: #444; } /* Gold */
@@ -71,7 +70,7 @@ h2 {
 .coin-inline-display { display: inline-block; min-width: 30px; text-align: center; }
 
 
-/* --- Seção de Informações --- (sem alterações) */
+/* --- Seção de Informações --- */
 .coin-info ul { list-style: none; padding: 0; }
 .coin-info li {
     background-color: #f8f8ff; padding: 10px; margin-bottom: 8px;
@@ -92,7 +91,7 @@ h2 {
     background-color: #fffacd; /* Lemon Chiffon */
     border: 1px solid #eee;
     border-left: 5px solid transparent;
-    padding: 20px;
+    padding: 15px; /* Reduzi um pouco o padding para caber mais */
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -106,25 +105,30 @@ h2 {
 
 .question-coins { /* Container das moedas na questão */
     margin-bottom: 15px; padding: 10px;
-    background-color: rgba(255, 255, 255, 0.5); border-radius: 5px;
-    min-height: 80px; display: flex; flex-wrap: wrap;
-    gap: 10px; align-items: center;
+    background-color: rgba(255, 255, 255, 0.6); /* Fundo um pouco mais opaco */
+    border-radius: 5px;
+    min-height: 70px; /* Ajuste para novo tamanho das moedas */
+    display: flex; flex-wrap: wrap;
+    gap: 5px; /* Espaço menor entre moedas */
+    align-items: center;
+    justify-content: center; /* Centraliza as moedas se houver poucas */
 }
 
 /* --- Estilos das Opções (Múltipla Escolha) --- */
 .options {
     margin-top: 15px;
-    display: flex; /* Coloca opções lado a lado */
-    flex-wrap: wrap; /* Permite quebrar linha se não couber */
-    gap: 15px; /* Espaço entre as opções */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espaço entre as opções */
+    justify-content: center; /* Centraliza as opções */
 }
 
 .option {
-    display: flex; /* Alinha radio button e label */
+    display: flex;
     align-items: center;
-    background-color: #f8f9fa; /* Fundo levemente cinza */
+    background-color: #f8f9fa;
     padding: 8px 12px;
-    border-radius: 20px; /* Bordas arredondadas */
+    border-radius: 20px;
     border: 1px solid #dee2e6;
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -134,9 +138,8 @@ h2 {
 }
 
 .option input[type="radio"] {
-    margin-right: 8px; /* Espaço entre o botão e o texto */
+    margin-right: 8px;
     cursor: pointer;
-    /* Opcional: aumentar o tamanho do radio button */
     transform: scale(1.2);
 }
 
@@ -146,31 +149,25 @@ h2 {
     color: #495057;
 }
 
-/* Estilo quando uma opção está selecionada (sutil) */
 .option input[type="radio"]:checked + label {
-   color: #007bff; /* Cor azul para o texto selecionado */
+   color: #007bff;
    font-weight: 600;
 }
-/* Você pode adicionar mais estilo para o .option quando o radio está checked se quiser */
-/* .option:has(input[type="radio"]:checked) {
-    background-color: #cfe2ff;
-    border-color: #9ec5fe;
-} */
 
 
-/* --- Indicador de Resultado (check/cross) --- (sem alterações) */
+/* --- Indicador de Resultado (check/cross) --- */
 .result-indicator {
     font-size: 1.2em; font-weight: bold; margin-left: 15px;
 }
 .result-indicator.correct { color: #28a745; } /* Verde */
 .result-indicator.incorrect { color: #dc3545; font-size: 0.9em; font-weight: normal;} /* Vermelho */
 
-/* Estilo para exercício correto/incorreto (sem alterações) */
+/* Estilo para exercício correto/incorreto */
 .exercise.correct { border-left-color: #28a745; background-color: #e9f7ec; }
 .exercise.incorrect { border-left-color: #dc3545; background-color: #f8d7da; }
 
 
-/* --- Seção de Verificação Final --- (sem alterações) */
+/* --- Seção de Verificação Final --- */
 .final-check { text-align: center; margin-top: 30px; }
 #check-all-btn {
     padding: 12px 25px; background-color: #ff6347; color: white;
